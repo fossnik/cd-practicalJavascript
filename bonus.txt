@@ -1,0 +1,9 @@
+Version 1 is based on arrays.
+- Creates an array in which to store objects.
+
+Version 2 adds functions.
+- Abstracts to functions the array manipulations from Ver. 1:
+    / displayTodo     / console.log()
+    / addTodo         / push()
+    / changeTodo      / array[index] = value
+    / deleteTodo      / splice()

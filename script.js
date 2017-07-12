@@ -11,7 +11,7 @@ var todoList = {
     this.todos[position] = newValue;
     this.displayTodos();
   },
-  deleteTodo: function(posistion) {
+  deleteTodo: function(position) {
     this.todos.splice(position, 1);
     this.displayTodos();
   }

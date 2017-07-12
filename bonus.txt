@@ -1,9 +1,23 @@
 Version 1 is based on arrays.
-- Creates an array in which to store objects.
+- Creates an array in which to store "todo" string values.
+  \ Rather awkwardly verbose command statements accommodate simplistic
+    permutations of a "todo" list (technically an array of strings).
 
-Version 2 adds functions.
-- Abstracts to functions the array manipulations from Ver. 1:
-    / displayTodo     / console.log()
-    / addTodo         / push()
-    / changeTodo      / array[index] = value
-    / deleteTodo      / splice()
+Version 2 codifies the means of array manipulation with functions.
+- Abstracts Ver. 1's convoluted algorithms into functions.
+  \ Constructs more readily comprehensible functions from tedius comand syntax.
+    + displayTodo     />    console.log(array[index])
+    + addTodo         />    push(todoText)
+    + changeTodo      />    array[index] = value
+    + deleteTodo      />    splice(position, 1)
+
+Version 3 establishes a new object class.
+  - Establishes a new object class
+    \ consisting of methods extended from the
+    functions used in Ver. 2
+
+Version 4 implements objects from  booleans.
+- Transitions from an array of Strings to an array of Objects.
+  \ These Newfangled Objects have Two Properties per Each:
+    + A string property essentially inherited from Ver. 3
+    + A New boolean value to represent the object's state (of completion)

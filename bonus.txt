@@ -23,3 +23,9 @@
   \ These Newfangled Objects have Two Properties per Each:
    |  + A String property abstracted from the Object established in V3
    |  + A new Boolean value to represent the Object's state (of completion)
+
+# Version 5 - Loops #
+- Changes the way objects are printed to facilitate checkmarks.
+  \ Iterates through arrays of objects using for loops.
+   |  + Set up console.log error message for zerolength array (empty list).
+   |  + Modifies displayTodos to print check next to todos .completed = true

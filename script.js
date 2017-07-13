@@ -1,12 +1,25 @@
 var todoList = {
-  // instantiate an object, rather than array of strings.
   todos: [],
   // displayTodos method
   displayTodos: function() {
-    console.log('My Todos', this.todos);
+    if (this.todos.length === 0) {
+      // Notify of zerolength todo array, otherwise proceed.
+      console.log("Your todo list is empty!")
+    } else {
+      // Prints "My Todos" header.
+      console.log('My Todos');
+      // NEW: loop through each object in todos[] array.
+      for (var i = 0; i < this.todos.length; i++) {
+        // verify .completed is true
+        if (this.todos[i].completed === true) {
+          // if true: print .todoText with a check
+          console.log('(x)', this.todos[i].todoText);
+        } else {
+          // otherwise: print .todoText without a check
+          console.log('( )', this.todos[i].todoText);
+        }
+    }
   },
-  // Create and 'push()' Object in lieu of a String.
-  // passed in "todoText" becomes a string property of the object.
   addTodo: function(todoText) {
     this.todos.push({
       // text property of the object

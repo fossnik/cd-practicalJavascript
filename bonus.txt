@@ -1,23 +1,25 @@
-Version 1 is based on arrays.
+# Version 1 - An Array #
 - Creates an array in which to store "todo" string values.
   \ Rather awkwardly verbose command statements accommodate simplistic
-    permutations of a "todo" list (technically an array of strings).
+   |  alterations of a "todo" list (technically an array of strings).
+   |  + todos = ['item 1', 'item 2', 'item 3']
 
-Version 2 codifies the means of array manipulation with functions.
-- Abstracts Ver. 1's convoluted algorithms into functions.
-  \ Constructs more readily comprehensible functions from tedius comand syntax.
-    + displayTodo     />    console.log(array[index])
-    + addTodo         />    push(todoText)
-    + changeTodo      />    array[index] = value
-    + deleteTodo      />    splice(position, 1)
+# Version 2 - Functions #
+- Codifies the means of array manipulation, through functions.
+  \ Permits more readily comprehensible command syntax
+   |  + displayTodo()     />    console.log(array[index])
+   |  + addTodo()         />    push(todoText)
+   |  + changeTodo()      />    array[index] = value
+   |  + deleteTodo()      />    splice(position, 1)
 
-Version 3 establishes a new object class.
-  - Establishes a new object class
-    \ consisting of methods extended from the
-    functions used in Ver. 2
+# Version 3 - Objects #
+- Marries the data structure from V1 with the algorithms from V2.
+  \ Implements a new Object Class (todoList) comprised from:
+   |  + The "todo" array from V1
+   |  + The four functions in V2 (the 'methods' of said Object)
 
-Version 4 implements objects from  booleans.
-- Transitions from an array of Strings to an array of Objects.
+# Version 4 - Booleans #
+- Replaces the String property of todoList with a new type of Object.
   \ These Newfangled Objects have Two Properties per Each:
-    + A string property essentially inherited from Ver. 3
-    + A New boolean value to represent the object's state (of completion)
+   |  + A String property abstracted from the Object established in V3
+   |  + A new Boolean value to represent the Object's state (of completion)

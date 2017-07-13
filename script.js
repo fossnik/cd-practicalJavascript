@@ -1,6 +1,7 @@
 var todoList = {
-  // instantiate blank array, rather than array of strings.
+  // instantiate an object, rather than array of strings.
   todos: [],
+  // displayTodos method
   displayTodos: function() {
     console.log('My Todos', this.todos);
   },
@@ -8,7 +9,7 @@ var todoList = {
   // passed in "todoText" becomes a string property of the object.
   addTodo: function(todoText) {
     this.todos.push({
-      // said object
+      // text property of the object
       todoText: todoText,
       // new boolean property
       // object incomplete by default
@@ -17,13 +18,21 @@ var todoList = {
     this.displayTodos();
   },
   // changeTodos method
-  changeTodo: function(position, newValue) {
-    this.todos[position] = newValue;
+  changeTodo: function(position, todoText) {
+    // added ".todoText" dot notation to specify just the text sub-property
+    this.todos[position].todoText = todoText;
     this.displayTodos();
   },
   // deleteTodos method
   deleteTodo: function(position) {
     this.todos.splice(position, 1);
+    this.displayTodos();
+  },
+  // toggleCompleted - implements the new boolean property.
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    // flips to the opposite, because of bang operator.
+    todo.completed = !todo.completed;
     this.displayTodos();
   }
 };

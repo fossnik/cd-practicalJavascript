@@ -29,3 +29,11 @@
   \ Iterates through arrays of objects using for loops.
    |  + Set up console.log error message for zerolength array (empty list).
    |  + Modifies displayTodos to print check next to todos .completed = true
+
+# Version 6 - Thinking in Code #
+- Parses the truth state of each object's .completed property.
+  \ In the case of a totally homogenous set, toggles all booleans to opposite.
+   |  + New "toggleAll" function (3 'for' loops):
+   |    : Sum the quantity of true .completed values within the todo array.
+   |      :: Case 1 :: All true  -> All false
+   |      :: Case 2 :: All false -> All true

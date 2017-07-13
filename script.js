@@ -47,5 +47,31 @@ var todoList = {
     // flips to the opposite, because of bang operator.
     todo.completed = !todo.completed;
     this.displayTodos();
+  },
+  // toggleAll - if all complete, set all incomplete, et vice versa.
+  toggleAll: function() {
+    // .length equates to the number of elements in todos array
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    // iterate over todos array..
+    for (var i = 0; i < totalTodos; i++ ) {
+      // and tally all todos Objects with affirmative .completed property.
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+    // Case 1 - all True to all False
+    // if there exist as many completed todos as the sum total of all todos..
+    if (completedTodos === totalTodos) {
+      // then loop through array, and let all todo .completed equal false..
+      for (var i = 0; i < totalTodos; i++ ) {
+        this.todos[i].completed = false;
+      }
+    // otherwise,
+    } else {
+    // Case 2 - loop through array, and let all todo .completed equal true.
+      for (var i = 0; i < totalTodos; i++ ) {
+        this.todos[i].completed = true;
+      }
   }
 };

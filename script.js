@@ -18,6 +18,7 @@ var todoList = {
           // otherwise: print .todoText without a check
           console.log('( )', this.todos[i].todoText);
         }
+      }
     }
   },
   addTodo: function(todoText) {
@@ -73,5 +74,22 @@ var todoList = {
       for (var i = 0; i < totalTodos; i++ ) {
         this.todos[i].completed = true;
       }
+    }
+    this.displayTodos();
   }
 };
+
+// Access to the displaytodos button via ID through DOM
+var displayTodosButton = document.getElementById('displayTodosButton');
+// Access to the toggle all button via ID
+var toggleAllButton = document.getElementById('toggleAllButton');
+
+// A DOM event listener to execute displayTodos method on click of the button
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
+
+// A DOM event listener to execute toggleAll method on click of the button
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});

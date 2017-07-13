@@ -37,3 +37,14 @@
    |    : Sum the quantity of true .completed values within the todo array.
    |      :: Case 1 :: All true  -> All false
    |      :: Case 2 :: All false -> All true
+
+# Version 7 - HTML and DOM #
+- Facilitates access to certain CLI functions via an HTML interface.
+  \ Creates index.html file featuring "displayTodos" and "toggleAll" buttons.
+   |  + Display todos and Toggle All buttons (with such id=displayTodosButton)
+   |  + Create link to script.js at bottom of HTML body.
+  \ Modifies the script.js for use with HTML
+   |  + Creates a displayTodosButton object, selecting by ID through the DOM
+   |  + Adds and event listener to the DOM, to trigger displayTodos upon click.
+   |  + Creates a toggleAll button object, selecting by ID through the DOM
+   |  + Adds and event listener to the DOM, to trigger toggleAll upon click.

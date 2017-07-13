@@ -23,7 +23,10 @@ var todoList = {
     this.todos[position].todoText = todoText;
     this.displayTodos();
   },
+<<<<<<< HEAD
   // deleteTodos method
+=======
+>>>>>>> 953d310dbcdbabcbcc4df2a98f6bb11ea5906c90
   deleteTodo: function(position) {
     this.todos.splice(position, 1);
     this.displayTodos();

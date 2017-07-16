@@ -65,3 +65,17 @@
    |  + New "Change Todo" with inputs for item index and the new text.
    |  + New "deleteTodo" button and index.
    |  + New "toggleCompleted" button and index.
+
+# Version 9 - Escaping the Command Line #
+- Eschews console logging in favor of populating html using dynamic JavaScript.
+  \ index.html mods
+   |  + New <ul> elements in which to display .todoText and .completed data.
+   |  + Created new todoTextWithCompletion variable for printing checkboxes.
+   |  + Remove DisplayTodos button (no need to log to console anymore).
+  \ script.js mods
+   |  + New "view" object (for displaying todos using JS and html.)
+   |  + Created a for loop to print todos on the index.html in UL elements.
+   |  + todLi.textContent appends the checkbox to that item as a list.
+   |  + Add displayTodos at the end of each function.
+   |  + Get rid of displayTodos handler (escape the console!)
+   |  + Get rid of displayTodos function and references at each function's end.

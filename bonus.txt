@@ -48,3 +48,20 @@
    |  + Adds and event listener to the DOM, to trigger displayTodos upon click.
    |  + Creates a toggleAll button object, selecting by ID through the DOM
    |  + Adds and event listener to the DOM, to trigger toggleAll upon click.
+
+# Version 8 - Getting Data from Inputs #
+- Modifies the current implementation of buttons, and adds new buttons.
+  \ Refactor of index.html buttons to use "onclick" instead of ID selector.
+   |  + Removed id="displayTodosButton" and id="toggleAllButton"
+   |  + Added <button onclick="handlers.function()" buttons.
+  \ script.js - Implements new object as an interface for the script functions.
+   |  + New "handlers" object to call the functions already built in the script.
+   |    Enables you to know what will run in script.js by looking at index.html.
+   |  + Deletes the id selector based eventListen javascript functions.
+   |    This functionality is replaced by the methods of the handlers object.
+   |  + New addTodo and ChangeTodo, deleteTodo, and toggleCompleted handlers.
+  \ index.html - New Buttons and Inputs
+   |  + New "Add" button and an <input> area for the data entry.
+   |  + New "Change Todo" with inputs for item index and the new text.
+   |  + New "deleteTodo" button and index.
+   |  + New "toggleCompleted" button and index.

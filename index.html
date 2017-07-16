@@ -3,14 +3,40 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>CareerDevs - Classwork #5 - Practical JavaScript</title>
+    <title>CareerDevs - Classwork #7 - Practical JavaScript</title>
   </head>
 
   <body>
     <h1>Todo List</h1>
 
-    <button id="displayTodosButton">Display Todos</button>
-    <button id="toggleAllButton">Toggle All</button>
+    <!-- New onclick buttons refer to methods of handlers object in script -->
+    <button onclick="handlers.displayTodos()">Display Todos</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+
+    <!-- New Add Button -->
+    <div>
+      <button onclick="handlers.addTodo()">Add</button>
+      <input id="addTodoTextInput" type="text">
+    </div>
+
+    <!-- New changeTodo -->
+    <div>
+      <button onclick="handlers.changeTodo()">Change Todo</button>
+      <input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoTextInput" type="text">
+    </div>
+
+    <!-- New deleteTodo -->
+    <div>
+      <button onclick="handlers.deleteTodo()">Delete</button>
+      <input id="deleteTodoPositionInput" type="number">
+    </div>
+
+    <!-- New toggleCompleted -->
+    <div>
+      <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+      <input id="toggleCompletedPositionInput" type="number">
+    </div>
 
     <script src="script.js"></script>
   </body>

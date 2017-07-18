@@ -20,20 +20,22 @@ var todoList = {
     var totalTodos = this.todos.length;
     var completedTodos = 0;
 
-		for (var i = 0; i < totalTodos; i++ ) {
-      if (this.todos[i].completed === true) {
-        completedTodos++;
-      }
-    }
-    if (completedTodos === totalTodos) {
-      for (var i = 0; i < totalTodos; i++ ) {
-        this.todos[i].completed = false;
-      }
-    } else {
-      for (var i = 0; i < totalTodos; i++ ) {
-        this.todos[i].completed = true;
-      }
-    }
+		// New: Sum completed todos using forEach, replacing the for loop.
+		this.todos.forEach(function(todo) {
+			if (todo.completed === true) {
+				completedTodos++;
+			}
+		});
+		// New forEach method for flipping completed values.
+		this.todos.forEach(function(todo) {
+			if (completedTodos === totalTodos) {
+				// Case 1: true -> false (new forEach() method.)
+				todo.completed = false;
+			} else {
+				// Case 2: false -> true (new forEach() method.)
+				todo.completed = true;
+			}
+		});
   }
 };
 
@@ -60,11 +62,7 @@ var handlers = {
     view.displayTodos();
   },
   deleteTodo: function(position) {
-    // var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
-		// replaces getElementById, because ID no longer comes from input text box.
     todoList.deleteTodo(position);
-    // deleteTodoPositionInput.value = '';
-
     view.displayTodos();
   },
   toggleCompleted: function() {
@@ -78,24 +76,23 @@ var view = {
   displayTodos: function() {
     var todosUl = document.querySelector('ul');
     todosUl.innerHTML = '';
-    for (var i = 0; i < todoList.todos.length; i++) {
-      var todoLi = document.createElement('li');
-      var todo = todoList.todos[i];
-      var todoTextWithCompletion = '';
 
-      if (todo.completed === true) {
-        todoTextWithCompletion = '(x) ' + todo.todoText;
-      } else {
-        todoTextWithCompletion = '( ) ' + todo.todoText;
-      }
+		// New forEach with "this" callback function because not a function on view
+		todoList.todos.forEach(function(todo, position) {
+			var todoLi = document.createElement('li');
+			var todoTextWithCompletion = '';
 
-			// Assigns each todoLi a unique ID based on the for loop index.
-			todoLi.id = i;
+			if (todo.completed === true) {
+		  	todoTextWithCompletion = '(x) ' + todo.todoText;
+			} else {
+		  	todoTextWithCompletion = '( ) ' + todo.todoText;
+			}
+
+			todoLi.id = position;
       todoLi.textContent = todoTextWithCompletion;
-			// Appends delete buttons to page using createDeleteButton method.
 			todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
-    }
+		}, this);
 	},
 		// New Delete button for each line item.
 		createDeleteButton: function() {

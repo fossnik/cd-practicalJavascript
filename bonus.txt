@@ -93,3 +93,10 @@
 	 |	+ Removes obsolete deleteTodoPositionInput from deleteTodos function.
 	 |		The ID no longer comes from the user input box. ID passed directly in.
 	 |	+ Relocates event listeners to view object - "setUpEventListeners"
+
+# Version 11 - Delete All For Loops #
+- Replaces for loops with forEach() array prototype; easier to understand code.
+	\ script.js mods
+	 |	+ toggleAll - Replaces completedTodos summer for loop with a forEach.
+	 |								Implement 1 forEach to replace bothtoggleAll contingencies.
+	 |	+ displayTodos - Replaces for with forEach and a callback function 'this'

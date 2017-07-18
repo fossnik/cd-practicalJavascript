@@ -79,3 +79,17 @@
    |  + Add displayTodos at the end of each function.
    |  + Get rid of displayTodos handler (escape the console!)
    |  + Get rid of displayTodos function and references at each function's end.
+
+# Version 10 - Click to Delete #
+- Simplifies deleting todos by including a "delete" on each line item.
+	\ index.html mods
+	 |	+ Removes the obsolete delete input box and it's button.
+	\ script.js mods
+	 |	+ New "createDeleteButton" method in view object.
+	 |	+ New todoLi.appendChild calls createDeleteButton from displayTodos.
+	 |	+ Assigns a unique ID property to each line item (for reference).
+	 |	+ New eventlistener to run the delete function when the button is clicked.
+	 |	+ Use event.target object of eventListener to identify ID and run delete.
+	 |	+ Removes obsolete deleteTodoPositionInput from deleteTodos function.
+	 |		The ID no longer comes from the user input box. ID passed directly in.
+	 |	+ Relocates event listeners to view object - "setUpEventListeners"
